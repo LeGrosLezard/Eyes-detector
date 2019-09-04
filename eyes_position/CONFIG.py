@@ -1,27 +1,15 @@
-dico = {"le mec à levé la tete":"signe de défi ou a vu un truk",
-        "le mec à baisser la tete":"signe de soumission ou ramasse un truk",
-        "le mec regarde en HAUT":"recherche active d'information en mémoire ou a vu un truk",
-        "le mec regarde en bas":"imagination ou il a vu un truk ou soumission",
-        "le mec s'est baissé":"comme si un sac le pesé",
-        "le mec s'est levé":"comme quand tu va a la mer et que t'as un peu de bide",
-        "le mec a regarder en haut a gauche":"imagination image",
-        "le mec a gauche":"imagination son",
-        "le mec a regarder en bas a gauche":"verification sentiment",
-        "le mec a regarder en haut a gauche":"voisualisation image",
-        "le mec a regarder a droite":"mémoire son",
-        "le mec a regarder en bas a droite":"dialogue interne",
+"""when the user is looking at a place we display one of these phrases. Moreover, if the person bends or gets up"""
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+dico = {"the person lifted his head":"the person lifted his head",
+        "the person has dropped his head":"the person has dropped his head",
+        "the person looks up":"the person looks up",
+        "le mec regarde en bas":"the person looks down",
+        "the person bent down":"the person bent down",
+        "the person got up":"the person got up",
+        "the person looked at the top left":"the person looked at the top left",
+        "the person looked left":"the person looked left",
+        "the person to look down left":"the person to look down left",
+        "the person to look at the top left":"the person to look at the top left",
+        "the person to look right":"the person to look right",
+        "the person to look down right":"the person to look down right",
     }
