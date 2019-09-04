@@ -4,8 +4,6 @@ from PIL import Image
 import os
 
 
-
-
 def pre_initialisation(eyes, liste, frame):
     """Ici si repere est inférieur a 100
     on ajoute les lignes dans la liste"""
@@ -28,28 +26,29 @@ def position_yeux_verticale(eyes, liste, frame):
 
         cv2.rectangle(frame, (ex,ey), (ex+ew, ey+eh), 2)
 
-        if ey < sum(liste)/len(liste) - 90:
-            return "le mec s'est levé"
+        if ey < sum(liste)/len(liste) - 100:
+            return "the person got up"
             
-        elif ey > sum(liste)/len(liste) + 90: 
-            return "le mec s'est baissé"
+        elif ey > sum(liste)/len(liste) + 100: 
+            return "the person bent down"
 
         elif ey < sum(liste)/len(liste) - 20:
-            return "le mec à levé la tete"
+            return "the person lifted his head"
             
         elif ey > sum(liste)/len(liste) + 20: 
-            return "le mec à baisser la tete"
+            return "the person has dropped his head"
 
         elif ey < sum(liste)/len(liste) - 5:
-            return "le mec regarde en HAUT"
+            return "the person looks up"
         
-        elif ey > sum(liste)/len(liste) + 5: 
-            return "le mec regarde en bas"
+        elif ey > sum(liste)/len(liste) + 10: 
+            return "the person to look down"
+
 
 
 def qualibrage(LISTE_QUALIBRAGE):
-    if LISTE_QUALIBRAGE[-10:] in ("le mec regarde en HAUT",
-                                  "le mec regarde en bas"):
+    if LISTE_QUALIBRAGE[-10:] in ("the person looks up",
+                                  "the person to look down"):
         return "qualibration"
 
 
@@ -94,11 +93,11 @@ def position_yeux_horizontal(eyes, LISTE_DROITE_GAUCHE, frame):
 
                             if round(int(ex+(ew/2))) < LISTE_DROITE_GAUCHE[-2] - 1:
                                 LISTE_DROITE_GAUCHE.append("retour")
-                                return "gauche"
+                                return "left"
                             
                             elif round(int(ex+(ew/2))) > LISTE_DROITE_GAUCHE[-2] + 1:
                                LISTE_DROITE_GAUCHE.append("retour")
-                               return "droite"
+                               return "right"
                 except:
                     pass
 
