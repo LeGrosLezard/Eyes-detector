@@ -18,6 +18,7 @@ VIDEO qui montre
 
 
 CV2 -> pip install opencv-python (real time image processing)
+
 numpy -> pip install numpy (make array object)
 
 
