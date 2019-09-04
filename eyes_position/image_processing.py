@@ -5,42 +5,47 @@ import os
 
 
 def pre_initialisation(eyes, liste, frame):
-    """Ici si repere est inférieur a 100
-    on ajoute les lignes dans la liste"""
-
+    """we detect the position of the eyes"""
 
     for (ex, ey, ew, eh) in eyes:
 
         cv2.rectangle(frame, (ex,ey), (ex+ew, ey+eh), 0)
-        
+
         ey = ey.tolist()
         liste.append(ey)
 
         
 def position_yeux_verticale(eyes, liste, frame):
-    """Si repere est superieur a 100
-    c'est qu'on a fini la premiere initialisation"""
+    """a mark has been defined with the initialization.
+    Now we continue our eyes and their position
+    by contributing to the reference"""
 
-    
+
     for (ex, ey, ew, eh) in eyes:
 
         cv2.rectangle(frame, (ex,ey), (ex+ew, ey+eh), 2)
 
+        #  -100px on y axis
         if ey < sum(liste)/len(liste) - 100:
             return "the person got up"
-            
+ 
+        #  +100px on y axis
         elif ey > sum(liste)/len(liste) + 100: 
             return "the person bent down"
 
+        #  -100px on y axis
         elif ey < sum(liste)/len(liste) - 20:
             return "the person lifted his head"
-            
+
+        #  +20px on y axis
         elif ey > sum(liste)/len(liste) + 20: 
             return "the person has dropped his head"
 
+        #  -5px on y axis
         elif ey < sum(liste)/len(liste) - 5:
             return "the person looks up"
-        
+
+        #  +10px on y axis
         elif ey > sum(liste)/len(liste) + 10: 
             return "the person to look down"
 
@@ -76,7 +81,6 @@ def position_yeux_horizontal(eyes, LISTE_DROITE_GAUCHE, frame):
                 LISTE_DROITE_GAUCHE.append(round(int(ex+(ew/2))))
 
                 try:
-
 
                     if LISTE_DROITE_GAUCHE[-2] == "retour":
                         pass
