@@ -3,12 +3,12 @@ import cv2
 from PIL import Image
 import os
 
-from traitement_image import pre_initialisation
-from traitement_image import position_yeux_verticale
-from traitement_image import qualibrage
-from traitement_image import position_yeux_horizontal
-from traitement_image import association
-from traitement_image import pre_initialisation
+from image_processing import pre_initialisation
+from image_processing import position_yeux_verticale
+from image_processing import qualibrage
+from image_processing import position_yeux_horizontal
+from image_processing import association
+from image_processing import pre_initialisation
 
 
 def video_capture_yeux():
@@ -82,3 +82,15 @@ def video_capture_yeux():
 
 if __name__ == "__main__":
     video_capture_yeux()
+
+
+
+
+
+
+
+
+
+
+
+
