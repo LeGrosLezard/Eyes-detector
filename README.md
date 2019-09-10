@@ -1,29 +1,13 @@
-# Eyes-detector
+# Eyes-detector in progress
 
-<em>status: <strong>need a code review and translation</strong></em><br><br>
-
-
-Computer vision/haarcascade
-
-<em>here is a project where we can detect eyes and know their movements</em>
-
-We propose to do an initialization or we detect the eyes of the person. We fill a list of the top 50 positions. Then we propose to say where the eyes move. For this we perform an average of the initialization and check the position by contribution to this average. If the person goes down, or heads up, we do a new initialization.
+  Hello my name's Jb i've 25 years old, young graduate of OpenClassrooms on web developpement, computer enthusiast I tried to make an eyes tracking.
 
 
 
 
-VIDEO qui montre
+At first we need to do an initialization who will calculate the position of the eyes
+
+![1](https://user-images.githubusercontent.com/54853371/64656121-a991ce80-d42e-11e9-8d7b-f63e0fb890a0.jpg)
 
 
 
-
-CV2 -> pip install opencv-python (real time image processing)
-
-numpy -> pip install numpy (make array object)
-
-
-
-
-
-
-Explication
