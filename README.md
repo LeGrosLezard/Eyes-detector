@@ -8,11 +8,15 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 
 
+
 At first we need to do an initialization who will calculate the position of the eyes
 
 ![1](https://user-images.githubusercontent.com/54853371/64656121-a991ce80-d42e-11e9-8d7b-f63e0fb890a0.jpg)
 
 
+# Concretely what is that for ? 
+
+Did you know PNL ? it's a theory on the visual fields and the gaze...
 
 
 # Library
