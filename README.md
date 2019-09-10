@@ -18,4 +18,8 @@ At first we need to do an initialization who will calculate the position of the 
 
 # Architecture
 
+# How improve ?
+
+Ia 
+
 # Limit
