@@ -2,7 +2,7 @@
 
   Hello my name's Jb i've 25 years old, young graduate of OpenClassrooms on web developpement, computer enthusiast I tried to make an eyes tracking.
 
-Here we detect if the person gets up, bends down, backs up, looks up, down, right, left, also top right, top left, bottom ...
+Here we detect if the person gets up, bends down, backs up, looks up, down, right, left, also top right, top left, bottom ... if the person gets up or down we recalculate then the position; course this is a limit in case the personn is too agitated
 
 
 
