@@ -4,9 +4,9 @@ from PIL import Image
 import os
 
 from image_processing import pre_initialisation
-from image_processing import position_yeux_verticale
+from image_processing import y_eye_position
 from image_processing import qualibrage
-from image_processing import position_yeux_horizontal
+from image_processing import x_eye_position
 from image_processing import association
 from image_processing import pre_initialisation
 
@@ -24,7 +24,7 @@ def video_capture_yeux():
     while(True):
 
         #Eyes haarcascade
-        left_eye = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
+        left_eye = cv2.CascadeClassifier('haar/haarcascade_lefteye_2splits.xml')
 
         #We define the current frame and resize it
         ret, frame = video.read()
@@ -44,13 +44,13 @@ def video_capture_yeux():
         #if the eyes move by -5 pixels for example
         #(on the y-axis) it is because the person looked up.
         else:
-            position1 = position_yeux_verticale(eyes, FIT_LIST, frame)
-            position2 = position_yeux_horizontal(eyes, LIST_RIGHT_LEFT, frame)
-            #
-            association(position1, position2, FIT_LIST)
+            pos_y = y_eye_position(eyes, FIT_LIST, frame)
+            pos_x = x_eye_position(eyes, LIST_RIGHT_LEFT, frame)
+
+            association(pos_y, pos_x, FIT_LIST)
 
 
-            QUALIFER_LIST.append(position1)
+            QUALIFER_LIST.append(pos_y)
             qualibration = qualibrage(QUALIFER_LIST)
             if qualibration == "qualibration":
                 FIT_LIST = []
@@ -58,10 +58,10 @@ def video_capture_yeux():
 
             #If the person bent down, got up ...
             #We empty the list to re-initialize
-            if position1 in ("the person bent down",
-                             "the person got up",
-                             "the person lifted his head",
-                             "the person dropped his head"):
+            if pos_y in ("the person bent down",
+                         "the person got up",
+                         "the person lifted his head",
+                         "the person dropped his head"):
 
                 FIT_LIST = []
 
@@ -82,15 +82,3 @@ def video_capture_yeux():
 
 if __name__ == "__main__":
     video_capture_yeux()
-
-
-
-
-
-
-
-
-
-
-
-
