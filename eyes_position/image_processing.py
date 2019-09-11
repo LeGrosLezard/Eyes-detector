@@ -8,21 +8,19 @@ def pre_initialisation(eyes, liste, frame):
     """we detect the position of the eyes"""
 
     for (ex, ey, ew, eh) in eyes:
-
         cv2.rectangle(frame, (ex,ey), (ex+ew, ey+eh), 0)
-
-        ey = ey.tolist()
         liste.append(ey)
 
 
 
-def qualibrage(LISTE_QUALIBRAGE):
-    if LISTE_QUALIBRAGE[-10:] in ("the person looks up",
-                                 "the person to look down",
-                                 "the person bent down",
-                                 "the person lifted his head",
-                                 "the person got up",
-                                 "the person dropped his head"):
+def qualibrage(QUALIFER_LIST):
+
+    if QUALIFER_LIST[-10:] in ("the person looks up",
+                                "the person to look down",
+                                "the person bent down",
+                                "the person lifted his head",
+                                "the person got up",
+                                "the person dropped his head"):
         return "qualibration"
 
 #------------------------------------------------------------Y EYE FUNCTIONS
@@ -42,7 +40,7 @@ def y_eye_position(eyes, liste, frame):
             return "the person got up"
  
         #  +100px on y axis
-        elif ey > sum(liste)/len(liste) + 100: 
+        elif ey > sum(liste)/len(liste) + 150: 
             return "the person bent down"
 
         #  -100px on y axis
@@ -57,8 +55,8 @@ def y_eye_position(eyes, liste, frame):
         elif ey < sum(liste)/len(liste) - 5:
             return "the person looks up"
 
-        #  +10px on y axis
-        elif ey > sum(liste)/len(liste) + 10: 
+        #  +30px on y axis
+        elif ey > sum(liste)/len(liste) + 60: 
             return "the person to look down"
 
 
@@ -68,22 +66,28 @@ def y_eye_position(eyes, liste, frame):
 def x_movement(ex, ew, LISTE_RIGHT_LEFT):
     """ """
 
-    #We don't count the return of the eye
-    if LISTE_RIGHT_LEFT[-2] != "retour":
+    try:
+        #We don't count the return of the eye
+        if LISTE_RIGHT_LEFT[-2] != "retour":
 
-        if round(int(ex+(ew/2))) < LISTE_RIGHT_LEFT[-2] - 3 or\
-           round(int(ex+(ew/2))) > LISTE_RIGHT_LEFT[-2] + 4:
-            pass
-            # + 3 and - 4 are considere like a head movement
-        
-        else:
-            if round(int(ex+(ew/2))) < LISTE_RIGHT_LEFT[-2] - 1:
-                LISTE_RIGHT_LEFT.append("retour")
-                return "right"
-            
-            elif round(int(ex+(ew/2))) > LISTE_RIGHT_LEFT[-2] + 1:
-               LISTE_RIGHT_LEFT.append("retour")
-               return "left"
+            if round(int(ex+(ew/2))) < LISTE_RIGHT_LEFT[-2] - 3 or\
+               round(int(ex+(ew/2))) > LISTE_RIGHT_LEFT[-2] + 4:
+                pass
+                # + 3 and - 4 are considere like a head movement
+
+            else:
+                try:
+                    if LISTE_RIGHT_LEFT[-2] - 3 < round(int(ex+(ew/2))) < LISTE_RIGHT_LEFT[-2] - 1:
+                        LISTE_RIGHT_LEFT.append("retour")
+                        return "left"
+                    
+                    elif LISTE_RIGHT_LEFT[-2] + 4 > round(int(ex+(ew/2))) > LISTE_RIGHT_LEFT[-2] + 1:
+                       LISTE_RIGHT_LEFT.append("retour")
+                       return "right"
+                except TypeError:
+                    pass
+    except IndexError:
+        pass
 
 
 def x_eye_position(eyes, LISTE_RIGHT_LEFT, frame):
@@ -93,7 +97,7 @@ def x_eye_position(eyes, LISTE_RIGHT_LEFT, frame):
     if len(eyes) == 1:
         pass
     else:
-    
+
         for (ex, ey, ew, eh) in eyes:
 
             cv2.rectangle(frame, (ex,ey), (ex+ew, ey+eh), 2)
@@ -104,12 +108,11 @@ def x_eye_position(eyes, LISTE_RIGHT_LEFT, frame):
                 #We only take right eye
                 LISTE_RIGHT_LEFT.append(round(int(ex+(ew/2))))
 
-                try:
-                    position = x_movement(ex, ew, LISTE_RIGHT_LEFT)
-                    if position != None:
-                        return position
-                except:
-                    pass
+
+                position = x_movement(ex, ew, LISTE_RIGHT_LEFT)
+                if position != None:
+                    return position
+       
 
             counter += 1
 
@@ -141,7 +144,7 @@ def association(position1, position2, LISTE_AJUSTEMENT):
              position2 == "gauche":
             print("le mec a regarder en bas a gauche")
 
-
+    
     elif position1:
         print(position1)
 
