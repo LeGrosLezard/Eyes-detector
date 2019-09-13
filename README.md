@@ -11,11 +11,15 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 At first we need to do an initialization who will calculate the position of the eyes
 
+![uno](https://user-images.githubusercontent.com/54853371/64900188-c0832b80-d68f-11e9-820d-2dc774c932ab.png)
+
+Secondly
+
+![dadada](https://user-images.githubusercontent.com/54853371/64900187-bfea9500-d68f-11e9-9bd8-c3a385c4a784.png)
 
 
-
-
-<em></em>
+<em>A fringe can change everything.... Did you know that appearance can increase your salary and the look of others? no ? https://myprofilmypollution.herokuapp.com
+/em>
 
 # Concretely what is that for ? 
 
