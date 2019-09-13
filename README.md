@@ -6,15 +6,41 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 
 
---v2--- In progress
+--version 2--- In progress
 
 ![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
 
 
 
-<br><br><br><br><br><br><br><br><br><br><br>
+# Concretely what is that for ? 
 
----V1--
+But that can serve more than anything else! Mr hawkins, one of the most brilliant physicists of our century, needed it to be able to communicate. We were able to find out how a user could look at a web page for example and what information to put on such a site.
+
+Did you know PNL ? it's a theory on the visual fields and the gaze associate to our things
+
+![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
+
+For our personal project, use this to be able to say what a user thinks in conversation through this process
+
+
+
+# Library
+
+# Architecture
+
+# How improve ?
+
+Ia 
+
+# Limit
+
+
+
+
+
+<br><br>
+
+---Version 1--
 
 At first we need to do an initialization who will calculate the position of the eyes
 
@@ -31,17 +57,6 @@ Secondly
 
 
 
-
-
-# Concretely what is that for ? 
-
-But that can serve more than anything else! Mr hawkins, one of the most brilliant physicists of our century, needed it to be able to communicate. We were able to find out how a user could look at a web page for example and what information to put on such a site.
-
-Did you know PNL ? it's a theory on the visual fields and the gaze associate to our things
-
-![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
-
-For our personal project, use this to be able to say what a user thinks in conversation through this process
 
 # Library
 
