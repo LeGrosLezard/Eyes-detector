@@ -40,6 +40,7 @@ Did you know PNL ? it's a theory on the visual fields and the gaze associate to 
 
 ![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
 
+For our personal project, use this to be able to say what a user thinks in conversation through this process
 
 # Library
 
