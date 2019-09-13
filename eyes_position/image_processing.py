@@ -124,24 +124,6 @@ def association(position1, position2, LISTE_AJUSTEMENT):
     if position2 == None:
         pass
 
-    if position1 and position2:
-        if position1 == "le mec regarde en HAUT" and\
-           position2 == "gauche":
-            print("le mec a regarder en haut a gauche")
-            
-        elif position1 == "le mec regarde en HAUT" and\
-             position2 == "droite":
-            print("le mec a regarder en haut a droite")
-            
-        elif position1 == "le mec regarde en bas" and\
-             position2 == "droite":
-            print("le mec a regarder en bas a droite")
-            
-        elif position1 == "le mec regarde en bas" and\
-             position2 == "gauche":
-            print("le mec a regarder en bas a gauche")
-
-
     elif position1:
         print(position1)
 
