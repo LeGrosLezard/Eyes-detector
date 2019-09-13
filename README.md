@@ -47,5 +47,5 @@ Ia
 
 # Limit
 
-course this is a limit in case the personn is too agitated, all depend on a face detection.
+course this is a limit in case the personn is too agitated, all depend on a face detection. There are so many false detections. We need to put out the hair.
 
