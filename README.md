@@ -6,6 +6,13 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 
 
+--v2--- In progress
+
+![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
 
 ---V1--
 
@@ -19,7 +26,8 @@ Secondly
 <em>A fringe can change everything.... Did you know that appearance can increase your salary and the look of others? no ? https://myprofilmypollution.herokuapp.com</em>
 
 
-![sa-ConvertImage](https://user-images.githubusercontent.com/54853371/64900413-61beb180-d691-11e9-9092-1a5ea87b2605.jpg)
+![sa](https://user-images.githubusercontent.com/54853371/64900447-7b5ff900-d691-11e9-80d3-930fbe4172b5.png)
+
 
 
 
@@ -40,15 +48,4 @@ Ia
 # Limit
 
 course this is a limit in case the personn is too agitated, all depend on a face detection.
-
-
-
-
-<br><br><br><br><br><br><br><br>
-
---v2--- In progress
-
-![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
-
-
 
