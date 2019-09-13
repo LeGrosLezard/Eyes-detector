@@ -7,7 +7,7 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 
 
-
+---V1--
 
 At first we need to do an initialization who will calculate the position of the eyes
 
@@ -30,3 +30,12 @@ Ia
 # Limit
 
 course this is a limit in case the personn is too agitated, all depend on a face detection.
+
+
+
+
+<br><br><br><br><br><br><br><br>
+
+--v2--- In progress
+
+![aaaaa](https://user-images.githubusercontent.com/54853371/64832017-65423200-d5d8-11e9-84be-1fd28c35d5b0.png)
