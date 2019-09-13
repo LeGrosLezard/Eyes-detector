@@ -15,10 +15,14 @@ At first we need to do an initialization who will calculate the position of the 
 
 Secondly
 
-![dadada](https://user-images.githubusercontent.com/54853371/64900187-bfea9500-d68f-11e9-9bd8-c3a385c4a784.png)
-
-
+![dadada-ConvertImage](https://user-images.githubusercontent.com/54853371/64900396-42c01f80-d691-11e9-90d2-63795ba31673.jpg)
 <em>A fringe can change everything.... Did you know that appearance can increase your salary and the look of others? no ? https://myprofilmypollution.herokuapp.com</em>
+
+
+![sa-ConvertImage](https://user-images.githubusercontent.com/54853371/64900413-61beb180-d691-11e9-9092-1a5ea87b2605.jpg)
+
+
+
 
 # Concretely what is that for ? 
 
