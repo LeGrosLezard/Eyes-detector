@@ -18,8 +18,7 @@ Secondly
 ![dadada](https://user-images.githubusercontent.com/54853371/64900187-bfea9500-d68f-11e9-9bd8-c3a385c4a784.png)
 
 
-<em>A fringe can change everything.... Did you know that appearance can increase your salary and the look of others? no ? https://myprofilmypollution.herokuapp.com
-/em>
+<em>A fringe can change everything.... Did you know that appearance can increase your salary and the look of others? no ? https://myprofilmypollution.herokuapp.com</em>
 
 # Concretely what is that for ? 
 
