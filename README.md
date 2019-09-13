@@ -34,7 +34,9 @@ Secondly
 
 # Concretely what is that for ? 
 
-Did you know PNL ? it's a theory on the visual fields and the gaze...
+Did you know PNL ? it's a theory on the visual fields and the gaze associate to our things
+
+![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
 
 
 # Library
