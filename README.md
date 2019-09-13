@@ -34,6 +34,8 @@ Secondly
 
 # Concretely what is that for ? 
 
+But that can serve more than anything else! Mr hawkins, one of the most brilliant physicists of our century, needed it to be able to communicate. We were able to find out how a user could look at a web page for example and what information to put on such a site.
+
 Did you know PNL ? it's a theory on the visual fields and the gaze associate to our things
 
 ![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
