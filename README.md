@@ -13,6 +13,8 @@ At first we need to do an initialization who will calculate the position of the 
 
 ![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
 
+
+
 <em></em>
 
 # Concretely what is that for ? 
@@ -39,7 +41,7 @@ course this is a limit in case the personn is too agitated, all depend on a face
 
 --v2--- In progress
 
-![aaaaa](https://user-images.githubusercontent.com/54853371/64832017-65423200-d5d8-11e9-84be-1fd28c35d5b0.png)
+![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
 
 
 
