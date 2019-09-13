@@ -41,4 +41,4 @@ course this is a limit in case the personn is too agitated, all depend on a face
 ![aaaaa](https://user-images.githubusercontent.com/54853371/64832017-65423200-d5d8-11e9-84be-1fd28c35d5b0.png)
 
 
-Have you heard about the power of pizza? (in case this pajamas is 3/4 days old)
+
