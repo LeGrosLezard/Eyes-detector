@@ -11,7 +11,7 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 At first we need to do an initialization who will calculate the position of the eyes
 
-![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
+
 
 
 
