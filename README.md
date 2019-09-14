@@ -62,7 +62,19 @@ Secondly
 
 # Library
 
+ Python 3.x
+ 
+ pip
+ 
+ python-opencv
+
+
+
 # Architecture
+
+A main.py file (where we lunch the program) who depends of image_processing.py. 
+
+image_processing.py who dependance of haarcascade form the haar folder
 
 # How improve ?
 
@@ -70,5 +82,9 @@ Ia
 
 # Limit
 
-course this is a limit in case the personn is too agitated, all depend on a face detection. There are so many false detections. We need to put out the hair. We cannot make for example the personn look up on the left.
+course this is a limit in case the personn is too agitated, all depend on a face detection. 
+
+There are so many false detections. We need to put out the hair.
+
+We cannot make for example the personn look up on the left.
 
