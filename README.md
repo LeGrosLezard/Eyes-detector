@@ -27,7 +27,22 @@ From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILE
 
 # Library
 
+
 # Architecture
+
+
+# How it works ?
+
+We take in the initialization the points of the detection of the eyes. 
+
+We then make it by the average of the points previously recovered to make some crop cut areas. By this we avoid detection jumps
+
+In these cut areas we try to make an automatic thresold that only detects the eye. the threshold converted the image is in black or white color according to a certain threshold it is this threshold that we try to detect automatically. we are satisfied once we have found an area of 1240.
+
+Then we leave the eye with a findcontour and take the coordinates of the center of these areas
+
+
+Then we....
 
 # How improve ?
 
