@@ -14,7 +14,7 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 # Concretely what is that for ? 
 
-But that can serve more than anything else! Mr Hawkins, one of the most brilliant physicists of our century, needed it to be able to communicate. We were able to find out how a user could look at a web page for example and what information to put on such a site.
+But that can serve more than anything else! Mr Hawkins, one of the most brilliant physicists of our century and Physic, needed it to be able to communicate. We were able to find out how a user could look at a web page for example and what information to put on such a site.
 
 Did you know PNL ? it's a theory on the visual fields and the gaze associate to our things
 
