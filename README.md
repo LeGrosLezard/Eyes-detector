@@ -35,6 +35,7 @@ Ia
 
 # Limit
 
+Tt depends a lot on the threshold, the hair is a source of false detection, it depends on the detection of the eyes during initialization.
 
 
 
