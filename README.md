@@ -42,7 +42,7 @@ In these cut areas we try to make an automatic thresold that only detects the ey
 Then we leave the eye with a findcontour and take the coordinates of the center of these areas
 
 
-Then we take the position of these centers at each moment to know if the eye goes in one direction or not taking into account the movements of the head of the user by a face detection by haarcascade
+Then we take the position of these centers at each moment to know if the eye goes in one direction or not taking into account the movements of the head of the user by a face detection by haarcascade. (in course)
 
 
 # How improve ?
