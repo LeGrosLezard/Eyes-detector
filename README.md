@@ -22,6 +22,7 @@ Did you know PNL ? it's a theory on the visual fields and the gaze associate to 
 
 For our personal project, use this to be able to say what a user thinks in conversation through this process
 
+From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILER, beginner pay attention to what is said, may be strange.
 
 
 # Library
