@@ -24,7 +24,7 @@ Second we need to verify thead position (personn moves to left or top or bot or 
 
 ![a-ConvertImage](https://user-images.githubusercontent.com/54853371/64929226-a5492500-d823-11e9-8222-0101e9da7395.jpg)
 
-We recover at every moment the detection of the head. We thus compare the position of a second ago that is t -1 with the current position t.
+We recover at every moment the detection of the head. We thus compare the position of a second ago that is t -1 with the current position t. <em>Note that the use of the notion t allows us to give a scientific dimension</em>
 
 
 
