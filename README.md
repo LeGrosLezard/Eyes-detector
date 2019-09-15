@@ -52,6 +52,11 @@ For our personal project, use this to be able to say what a user thinks in conve
 From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILER, beginner pay attention to what is said, may be strange.
 
 
+# In FINE
+
+normally we take center of our area and .....
+
+
 # Library
 
 
