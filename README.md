@@ -27,16 +27,15 @@ Second we need to verify thead position (personn moves to left or top or bot or 
 We recover at every moment the detection of the head. We thus compare the position of a second ago that is t -1 with the current position t. <em>Note that the use of the notion t allows us to give a scientific dimension</em>
 
 
-
-
-
-
-
-
-
-
+# Eyes detection
 
 ![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
+
+Now we apply a gray filter (we render the image with only one channel, there is blue and green red, we render 3 channels to one) then a blurring of our two eyes averaging areas . In addition we apply a threshold filter. We are binarizing the image. We make the pixels either white or black according to a threshold. In order to determine this threshold, we make a loop which at the detection of an area stops the automation because we our eye become black then.
+
+In the case where we only detect one eye we apply the same threshold as the other, if we do not find any of the two eyes we start again the last process
+
+
 
 
 
