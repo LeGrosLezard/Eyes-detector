@@ -8,6 +8,24 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 # --version 2--- In progress
 
+# First we need to pass an initialization
+
+
+# Second we need to verify the head position (personn moves to left or top or bot or right ?) for a re initialization. Indeed, the crop position isn't valid anymore in this case
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
 
 
