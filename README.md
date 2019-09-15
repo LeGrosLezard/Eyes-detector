@@ -15,12 +15,13 @@ can take estimate the constantly eyes position of user
 
 ![b-ConvertImage](https://user-images.githubusercontent.com/54853371/64929242-fb1dcd00-d823-11e9-98bf-3d8347006d32.jpg)
 
-
+so now we know if user moves his head to right, left, top or bot. 
 
 
 # The head position 
 
 Second we need to verify thead position (personn moves to left or top or bot or right ?) for a re initialization. Indeed as we recover a fixed area of the eye area we must take into account the movement of the head of the person because our areas would become obsoletes
+We recover at every moment the detection of the head. We thus compare the position of a second ago that is t -1 with the current position t
 
 
 ![a-ConvertImage](https://user-images.githubusercontent.com/54853371/64929226-a5492500-d823-11e9-8222-0101e9da7395.jpg)
