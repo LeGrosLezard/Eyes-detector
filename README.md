@@ -10,7 +10,7 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 # Initialization
 
-First we need to pass an
+First we need to pass an initialization
 
 ![b-ConvertImage](https://user-images.githubusercontent.com/54853371/64929242-fb1dcd00-d823-11e9-98bf-3d8347006d32.jpg)
 
