@@ -20,7 +20,8 @@ can take estimate the constantly eyes position of user
 
 # The head position 
 
-Second we need to verify thead position (personn moves to left or top or bot or right ?) for a re initialization. Indeed, the crop position isn't valid anymore in this case
+Second we need to verify thead position (personn moves to left or top or bot or right ?) for a re initialization. Indeed as we recover a fixed area of the eye area we must take into account the movement of the head of the person because our areas would become obsoletes
+
 
 ![a-ConvertImage](https://user-images.githubusercontent.com/54853371/64929226-a5492500-d823-11e9-8222-0101e9da7395.jpg)
 
