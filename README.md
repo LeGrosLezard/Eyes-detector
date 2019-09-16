@@ -53,12 +53,12 @@ Did you know PNL ? it's a theory on the visual fields and the gaze associate to 
 
 ![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
 
-VC Visual built
-VR visual rememor
-AC auditive built
-AR auditory  recalled
-K knesthetic
-id Internal dialogue
+<strong>VC</strong> Visual built
+<strong>VR</strong> visual rememor
+<strong>AC</strong> auditive built
+<strong>AR</strong> auditory  recalled
+<strong>K</strong> knesthetic
+<strong>id</strong> Internal dialogue
 
 <em>well on a theory can be built and deconstructed</em>
 
