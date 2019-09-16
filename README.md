@@ -29,7 +29,7 @@ We recover at every moment the detection of the head. We thus compare the positi
 
 # Eyes detection
 
-![dada](https://user-images.githubusercontent.com/54853371/64900015-a137ce80-d68e-11e9-91d6-7136854f8b1a.png)
+![c](https://user-images.githubusercontent.com/54853371/64973475-5fd03a80-d8ab-11e9-92d8-7451f364d452.png)
 
 Now we apply a gray filter (we render the image with only one channel, there is blue and green red, we render 3 channels to one) then a blurring of our two eyes averaging areas . In addition we apply a threshold filter. We are binarizing the image. We make the pixels either white or black according to a threshold. In order to determine this threshold, we make a loop which at the detection of an area stops the automation because we our eye become black then.
 
