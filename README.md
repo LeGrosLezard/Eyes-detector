@@ -34,7 +34,7 @@ We take center of our area and compare it with last data (placed in list). Cours
 
 # LIMIT
 
-distance beetween user and camera, hairs or something who can delete a good detection of eyes, size of the file and loop execution...
+distance beetween user and camera, hairs or something who can delete a good detection of eyes, size of the file and time loop execution... (in course)
 
 
 
