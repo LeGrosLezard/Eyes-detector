@@ -65,8 +65,27 @@ From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILE
 
 # Library
 
+ Python 3.x
+ 
+ pip
+ 
+ python-opencv
 
 # Architecture
+
+A main file .py composed by:
+
+- eyes function (detecting eyes)
+
+- automatic tresh function (ajusting threshold)
+
+- center_detection function (detecting center of area detected by automatic tresh)
+
+- head_movement function (detecting movement of head)
+
+- dectetion_message (if right and left eye have the same position display a message)
+
+- video_capture (lunching video capture (camera) and all functions)
 
 
 # How it works ?
