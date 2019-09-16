@@ -34,7 +34,7 @@ We take center of our area and compare it with last data (placed in list). Cours
 
 # LIMIT
 
-distance beetween user and camera, hairs or something who can delete a good detection of eyes 
+distance beetween user and camera, hairs or something who can delete a good detection of eyes, size of the file...
 
 
 
@@ -90,7 +90,7 @@ A main file .py composed by:
 
 # How it works ?
 
-We can detect the position of the eyes and we make a threshold in this region that we put in a loop, that we automatically adjust until the detection of an air that we hope is our eye. Then we return each position in a list, a container. We then compare the current position with the old position. This is sensitive to false detections. We do this on the x and y axis. In addition, we check that both eyes have detected this and we display a message (reduce false detection). We also make a list of the position of the head and check his position at each moment to deduce a possible movement
+We can detect the position of the eyes and we make a threshold in this region that we put in a loop, that we automatically adjust until the detection of an air that we hope is our eye. Then we return each position in a list, a container. We then compare the current position with the old position. This is sensitive to false detections. We do this on the x and y axis. In addition, we check that both eyes have detected this and we display a message (reduce false detection). We also make a list of the position of the head and check his position at each moment to deduce a possible movement (for example a verbal slap but it will be in another program.)
 
 
 
