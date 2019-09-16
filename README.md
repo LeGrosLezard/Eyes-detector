@@ -5,6 +5,9 @@
 Here we detect if the person gets up, bends down, backs up, looks up, down, right, left, also top right, top left, bottom ... if the person gets up or down we recalculate then the position; focus on the code. In order to do this we must take into account the position of the eyes on the x and y axis.
 
 
+# How it works ?
+
+We can detect the position of the eyes and we make a threshold in this region that we put in a loop, that we automatically adjust until the detection of an air that we hope is our eye. Then we return each position in a list, a container. We then compare the current position with the old position. This is sensitive to false detections. We do this on the x and y axis. In addition, we check that both eyes have detected this and we display a message (reduce false detection). We also make a list of the position of the head and check his position at each moment to deduce a possible movement (for example a verbal slap but it will be in another program.)
 
 # --version 2---
 
@@ -88,9 +91,7 @@ A main file .py composed by:
 - video_capture (lunching video capture (camera) and all functions)
 
 
-# How it works ?
 
-We can detect the position of the eyes and we make a threshold in this region that we put in a loop, that we automatically adjust until the detection of an air that we hope is our eye. Then we return each position in a list, a container. We then compare the current position with the old position. This is sensitive to false detections. We do this on the x and y axis. In addition, we check that both eyes have detected this and we display a message (reduce false detection). We also make a list of the position of the head and check his position at each moment to deduce a possible movement (for example a verbal slap but it will be in another program.)
 
 
 
