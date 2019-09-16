@@ -41,7 +41,9 @@ In the case where we only detect one eye we apply the same threshold as the othe
 normally we take center of our area and .....
 
 
+# LIMIT
 
+distance beetween user and camera, hairs or something who can delete a good detection of eyes 
 
 
 
