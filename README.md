@@ -1,4 +1,4 @@
-# Eyes-detector in progress
+# Eyes-detector
 
   Hello my name's Jb i've 25 years old, barely graduate of OpenClassrooms on web developpement, computer enthusiast I tried to make an eyes tracking.
 
@@ -6,7 +6,7 @@ Here we detect if the person gets up, bends down, backs up, looks up, down, righ
 
 
 
-# --version 2--- In progress
+# --version 2---
 
 # Initialization
 
