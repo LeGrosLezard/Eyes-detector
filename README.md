@@ -36,6 +36,12 @@ Now we apply a gray filter (we render the image with only one channel, there is 
 In the case where we only detect one eye we apply the same threshold as the other, if we do not find any of the two eyes we start again the last process
 
 
+# In FINE
+
+normally we take center of our area and .....
+
+
+
 
 
 
@@ -52,9 +58,6 @@ For our personal project, use this to be able to say what a user thinks in conve
 From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILER, beginner pay attention to what is said, may be strange.
 
 
-# In FINE
-
-normally we take center of our area and .....
 
 
 # Library
