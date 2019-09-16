@@ -90,16 +90,10 @@ A main file .py composed by:
 
 # How it works ?
 
-We take in the initialization the points of the detection of the eyes. 
-
-We then make it by the average of the points previously recovered to make some crop cut areas. By this we avoid detection jumps
-
-In these cut areas we try to make an automatic thresold that only detects the eye. the threshold converted the image is in black or white color according to a certain threshold it is this threshold that we try to detect automatically. we are satisfied once we have found an area of 1240.
-
-Then we leave the eye with a findcontour and take the coordinates of the center of these areas
+We can detect the position of the eyes and we make a threshold in this region that we put in a loop, that we automatically adjust until the detection of an air that we hope is our eye. Then we return each position in a list, a container. We then compare the current position with the old position. This is sensitive to false detections. We do this on the x and y axis. In addition, we check that both eyes have detected this and we display a message. We also make a list of the position of the head and check his position at each moment to deduce a possible movement
 
 
-Then we take the position of these centers at each moment to know if the eye goes in one direction or not taking into account the movements of the head of the user by a face detection by haarcascade. (in course)
+
 
 
 # How improve ?
