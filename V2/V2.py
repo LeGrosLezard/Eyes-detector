@@ -2,184 +2,209 @@ import cv2
 import numpy as np
 from PIL import Image
 import imutils
+import time
 
 
-
-eyescascade = cv2.CascadeClassifier('haar/haarcascade_eye.xml')
-facecascade = cv2.CascadeClassifier('haar/haarcascade_frontalface_alt2.xml')
-
-
-def detection_initialization(frame, gray, facecascade, eyescascade,
-                             eye_list_one, eye_list_two):
-    """First we detect the eyes thanks
-        to a haarcascade in xml.
-        Second we add each new position
-        on a list.
-        After we make a sum for have an average
-        of the last points detected.
-    """
-
-    eyes = eyescascade.detectMultiScale(
-        gray,
-        scaleFactor=1.3,
-        minNeighbors=4,
-        minSize=(30, 30),
-        maxSize=(50, 50),
-    )
-
-    #eye = 0 for right and 1 for left
-    eye = 0 
-    for x, y, w, h in eyes:
-
-        if eye == 0:
-            eye_list_one[0].append(x)
-            eye_list_one[1].append(y)
-            eye_list_one[2].append(x+w)
-            eye_list_one[3].append(y+h)
-            cv2.rectangle(frame, (x, y), (x+w, y+h), 3)
-
-        elif eye == 1:
-            eye_list_two[0].append(x)
-            eye_list_two[1].append(y)
-            eye_list_two[2].append(x+w)
-            eye_list_two[3].append(y+h)
-            cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 255, 0), 3)
-
-        eye += 1
-
-
-def eyes(frame, liste1, liste2):
+def eyes(frame, gray, facecascade, eyescascade):
     """We make an average of our list.
     It give us There may be good eye detection.
     We escape detection leap.
     then we crop the current frame with this points.
     """
 
-    pts1 = int(round(sum(liste1[0]) / len(liste1[0])))
-    pts2 = int(round(sum(liste1[1]) / len(liste1[1])))
-    pts3 = int(round(sum(liste1[2]) / len(liste1[2])))
-    pts4 = int(round(sum(liste1[3]) / len(liste1[3])))
+    crop1 = False
+    crop2 = False
 
-    pts5 = int(round(sum(liste2[0]) / len(liste2[0])))
-    pts6 = int(round(sum(liste2[1]) / len(liste2[1])))
-    pts7 = int(round(sum(liste2[2]) / len(liste2[2])))
-    pts8 = int(round(sum(liste2[3]) / len(liste2[3])))
+    faces = facecascade.detectMultiScale(
+        gray,
+        scaleFactor=1.3,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+    )
 
-    crop1 = frame[pts2 + 10:pts4, pts1:pts3]
-    crop2 = frame[pts6 + 10:pts8, pts5:pts7]
-    
-    return crop1, crop2
+    for x1, y1, w1, h1 in faces:
+        roi_gray = gray[y1:y1+h1, x1:x1+w1]
+        roi_color = frame[y1:y1+h1, x1:x1+w1]
+
+
+        eyes = eyescascade.detectMultiScale(
+            roi_gray,
+            scaleFactor=1.3,
+            minNeighbors=4,
+            minSize=(30, 30),
+            maxSize=(45, 45),
+            flags=cv2.CASCADE_SCALE_IMAGE
+        )
+
+        eye = 0
+        for x, y, w, h in eyes:
+            if eye == 0:
+                crop1 = roi_color[y:y+h, x:x+w]
+                cv2.rectangle(roi_color, (x, y), (x+w, y+h), (50, 255, 50), 5)
+            elif eye == 1:
+                crop2 = roi_color[y:y+h, x:x+w]
+                cv2.rectangle(roi_color, (x, y), (x+w, y+h), (255, 0, 0), 5)
+            eye += 1
+
+        return crop1, crop2, faces
 
 
 
-def automatic_thresh(crop):
+def automatic_thresh(crop, eyes_position):
     """We increment a variable of +1
     and verify the area into the last crop. If the area
     if > 1200 we stop the loop (max value i can got).
     We have got an potential eye.
     We add + 20 to the min tresh for a better detection.
     """
-    
+
     counter = 0
-    ocontinuer = True
-    while ocontinuer:
+    area_seuil_min = 1200
+
+    while True:
 
         if counter == 255:
-            counter = 0
-        
+            return None
+
         gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (11, 11), 0)
         _, thresh = cv2.threshold(gray, counter, 255, 0)
 
-
         try:
             contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
             img = cv2.drawContours(crop, contours, 1, (0,255,0), 3)
+
+            eyes_posX, eyes_posY = center_detection(crop, contours, eyes_position)
             for c in contours:
-                if cv2.contourArea(c) >= 1200:
-                    thresh_min = counter + 20
-                    return True, thresh_min
+                if cv2.contourArea(c) >= area_seuil_min:
+                    thresh_min = counter
+                    return thresh_min, contours, eyes_posX, eyes_posY
         except:
             pass
 
         counter += 1
 
 
-def detecting_eye(crop, thresh_min):
-    """Here we detecting by treshold
-    the eye. We display on the current frame
-    the contour and take the center of this
-    contour.
-    This center will say to us if the eye has
-    moved.
-    """
 
-    gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
-    gray = cv2.GaussianBlur(gray, (11, 11), 0)
-    _, thresh = cv2.threshold(gray, thresh_min, 255, 0)
+def center_detection(frame, contours, eyes_position):
+    """Here we detection the center of our last detections"""
 
+    out_x = ""
+    out_y = ""
+    counter = 0
 
-    try:
-        contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-        img = cv2.drawContours(crop, contours, 1, (0,255,0), 3)
-
-        for c in contours:
-            M = cv2.moments(c)
+    for contour in contours:
+        if counter == 1:
+            M = cv2.moments(contour)
             cX = int(M["m10"] / M["m00"])
             cY = int(M["m01"] / M["m00"])
-            cv2.circle(crop, (cX, cY), 1, (0, 0, 255), 1)
-    except:
-        pass
+            cv2.circle(frame, (cX, cY), 1, (0, 0, 255), 5)
+
+            try:
+                if cX > eyes_position[0][-1] + 2:
+                    out_x = "person WATCHES right"
+                elif cX < eyes_position[0][-1] - 2:
+                    out_x = "person WATCHES left"
+                if cY > eyes_position[1][-1] + 1:
+                    out_y = "person WATCHES top"
+                elif cY < eyes_position[1][-1] - 1:
+                    out_y = "person WATCHES bot"
+            except IndexError:
+                pass
+
+            eyes_position[0].append(cX)
+            eyes_position[1].append(cY)
+
+            return out_x, out_y
+        counter += 1
+
+    
+
+def head_movement(frame, faces, liste_position):
+    """Here we detect the head. Thank to this
+    we can re initializing in cas where the personn
+    moves his head.
+    """
+
+    for x, y, w, h in faces:
+
+        #x movements and y movements
+        try:
+            if x > liste_position[0][-1] + 15:
+                print("person MOVES to right")
+            elif x < liste_position[0][-1] - 15:
+                print("person MOVES to left")
+            if y > liste_position[1][-1] + 15:
+                print("person MOVES to bot")
+            elif y < liste_position[1][-1] - 15:
+                print("person MOVES to top")
+        except IndexError:
+            pass
+
+        liste_position[0].append(x)
+        liste_position[1].append(y)
+
+        cv2.rectangle(frame, (x, y), (x+w, y+h), 3)
 
 
-                    
-                
+
+def dectetion_message(right_eyeX, right_eyeY, left_eyeX, left_eyeY):
+    """Here we verify left and right eyes"""
+
+    x = False
+    y = False
+    if right_eyeX not in("", None) and left_eyeX not in("", None)\
+       and right_eyeX == left_eyeX:
+        x = True
+
+    if right_eyeY not in("", None) and left_eyeY not in("", None)\
+       and right_eyeY == left_eyeY:
+        y = True
+
+    if x == True and y == True:
+        print(right_eyeX, right_eyeY)
+
+    elif x == True:
+        print(right_eyeX)
+
+
+
+eyescascade = cv2.CascadeClassifier('haar/haarcascade_eye.xml')
+facecascade = cv2.CascadeClassifier('haar/haarcascade_frontalface_alt2.xml')
 def video_capture():
 
 
     video = cv2.VideoCapture(0)
-    
-    eye_list_one = [[], [], [], []]
-    eye_list_two = [[], [], [], []]
-
-    counter = 0
-    
-    STOP_INIT = False
-
+    eyes_position_right = [[], []]
+    eyes_position_left = [[], []]
+    head_position = [[], [], [], []]
 
     while(True):
 
         ret, frame = video.read()
+        frame = cv2.resize(frame, (800, 600))
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-
-        #INITIALIZATION SITUATION EYES
-        if len(eye_list_two[0]) < 30:
-            detection_initialization(frame, gray, facecascade, eyescascade,
-                                     eye_list_one, eye_list_two)
-
-        else:
-            crop_eye_right, crop_eye_left = eyes(frame,eye_list_one,
-                                                 eye_list_two)
-
+        try:
+            crop_eye_right, crop_eye_left,\
+                            faces = eyes(frame, gray, facecascade,
+                                         eyescascade)
 
             #INITIALIZATION THRESHOLD
-            if STOP_INIT is False:
+            tresh_min_right, contours,\
+                             right_posX, right_posY = automatic_thresh(crop_eye_right,
+                                                                       eyes_position_right)
+            tresh_min_left, contours,\
+                            left_posX, left_posY = automatic_thresh(crop_eye_left,
+                                                                    eyes_position_left)
 
-                _, tresh_min_right = automatic_thresh(crop_eye_right)
-                STOP_INIT, tresh_min_left = automatic_thresh(crop_eye_left)
-
-                print(tresh_min_right, tresh_min_left)
-
-
-
-            if STOP_INIT is True:
-
-                detecting_eye(crop_eye_right, tresh_min_right)
-                detecting_eye(crop_eye_left, tresh_min_left)
+            faces = head_movement(frame, faces, head_position)
+            dectetion_message(right_posX, right_posY, left_posX, left_posY)
+        except:
+            pass
 
 
-                
         cv2.imshow("frame", frame)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
