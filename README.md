@@ -29,7 +29,7 @@ In the case where we only detect one eye we apply the same threshold as the othe
 
 # In FINE
 
-normally we take center of our area and .....
+We take center of our area and compare it with last data (placed in list). Course it could detect the return of the eye.
 
 
 # LIMIT
@@ -55,8 +55,8 @@ Did you know PNL ? it's a theory on the visual fields and the gaze associate to 
 
 <em>well on a theory can be built and deconstructed, CARE left is right for our views</em>
 
+For our personal project, use this to be able to say what a user thinks in conversation through this process. imagine that everyone can understand each other and that there is no quiproco, that there is no more secret, that acceptable taboo today becomes understandable (taboo of the kind why I have curly and not smooth hair).
 
-For our personal project, use this to be able to say what a user thinks in conversation through this process
 
 From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILER, beginner pay attention to what is said, may be strange.
 
