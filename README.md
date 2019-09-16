@@ -60,7 +60,7 @@ Did you know PNL ? it's a theory on the visual fields and the gaze associate to 
 <strong>K</strong> knesthetic
 <strong>id</strong> Internal dialogue
 
-<em>well on a theory can be built and deconstructed</em>
+<em>well on a theory can be built and deconstructed, CARE left is right for our views</em>
 
 
 For our personal project, use this to be able to say what a user thinks in conversation through this process
