@@ -53,6 +53,16 @@ Did you know PNL ? it's a theory on the visual fields and the gaze associate to 
 
 ![images](https://user-images.githubusercontent.com/54853371/64900590-3ab4af80-d692-11e9-9dd9-9b7df461077c.jpg)
 
+VC Visual built
+VR visual rememor
+AC auditive built
+AR auditory  recalled
+K knesthetic
+id Internal dialogue
+
+<em>well on a theory can be built and deconstructed</em>
+
+
 For our personal project, use this to be able to say what a user thinks in conversation through this process
 
 From my 17 years old i try and try to match Patrick Jane or Spencer Ried. SPOILER, beginner pay attention to what is said, may be strange.
