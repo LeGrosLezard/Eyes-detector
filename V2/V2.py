@@ -65,7 +65,7 @@ def automatic_thresh(crop, eyes_position):
     while True:
 
         if counter == 255:
-            return None
+            return False
 
         gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (11, 11), 0)
@@ -73,7 +73,7 @@ def automatic_thresh(crop, eyes_position):
 
         try:
             contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-            img = cv2.drawContours(crop, contours, 1, (0,255,0), 3)
+            #img = cv2.drawContours(crop, contours, 1, (0,255,0), 3)
 
             eyes_posX, eyes_posY = center_detection(crop, contours, eyes_position)
             for c in contours:
@@ -194,7 +194,9 @@ def video_capture():
             #INITIALIZATION THRESHOLD
             tresh_min_right, contours,\
                              right_posX, right_posY = automatic_thresh(crop_eye_right,
-                                                                       eyes_position_right)
+                                                                        eyes_position_right)
+
+                                                         
             tresh_min_left, contours,\
                             left_posX, left_posY = automatic_thresh(crop_eye_left,
                                                                     eyes_position_left)
